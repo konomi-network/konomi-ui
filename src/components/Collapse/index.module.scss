@@ -1,0 +1,25 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.infoCollapse {
+  .collapse {
+    background-color: #2a324d;
+
+    :global {
+      .ant-collapse-item {
+        border: 0;
+      }
+      .ant-collapse-header {
+        @apply text-left text-base font-semibold py-2;
+        color: $primary-color !important;
+        padding: 0.5rem 1rem !important;
+        border-radius: 6px !important;
+        background: linear-gradient(0deg, #221334, #221334);
+      }
+    }
+
+    .valueBox {
+      background: #3f465f;
+    }
+  }
+}

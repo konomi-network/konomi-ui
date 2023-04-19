@@ -1,0 +1,27 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+@mixin flowItemContent {
+  width: 100%;
+  background: rgba(0, 215, 215, 0.1);
+  border-radius: 5px;
+}
+
+@mixin tabSelectorPanel {
+  background: transparent;
+  color: $primary-color;
+  cursor: pointer;
+}
+
+.verticalDecorator {
+  width: 2px;
+  transform-origin: top;
+  transform: scaleY(1.2);
+  background: linear-gradient(
+    360deg,
+    rgba(0, 215, 215, 0) 0%,
+    $primary-color 11.49%,
+    $primary-color 93.39%,
+    rgba(0, 215, 215, 0) 98.37%
+  );
+}

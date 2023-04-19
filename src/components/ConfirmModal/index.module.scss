@@ -1,0 +1,35 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.modal {
+  :global {
+    .ant-modal-content {
+      border: 1px solid $primary-color;
+      border-radius: 4px;
+      background-color: $theme-color;
+      color: white;
+    }
+    .ant-modal-close-icon {
+      @apply text-white;
+    }
+    .ant-modal-body {
+      @apply text-center;
+    }
+  }
+
+  .confirm {
+    width: 100%;
+    @include cyanBorder();
+    margin-top: 36px;
+    cursor: pointer;
+    color: $primary-color;
+    padding: 8px 16px;
+    text-align: center;
+  }
+}
+.confirmButton {
+  width: 100%;
+  @include cyanBorder();
+  cursor: pointer;
+  color: $primary-color;
+}

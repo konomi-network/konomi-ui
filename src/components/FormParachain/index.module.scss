@@ -1,0 +1,32 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.parachain {
+  border-radius: 6px;
+  background-color: #2a324d;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+
+  .item {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    .label {
+      color: #fff;
+      margin-right: 1rem;
+    }
+
+    .value {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      text-align: center;
+      margin-left: auto;
+      min-width: 150px;
+      color: rgba(0, 0, 0, 0.75);
+    }
+  }
+}

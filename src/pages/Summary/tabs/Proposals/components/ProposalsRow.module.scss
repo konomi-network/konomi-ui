@@ -1,0 +1,22 @@
+@import 'styles/variables';
+
+.title {
+  position: absolute;
+  transform-origin: top right;
+  transform: translateX(-100%) rotate(-90deg);
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: capitalize;
+  opacity: 0.5;
+  left: -1rem;
+  top: 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 0.5rem;
+  }
+}

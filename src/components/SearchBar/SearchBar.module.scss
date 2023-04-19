@@ -1,0 +1,50 @@
+@import "styles/variables";
+
+$placeholder-color: rgba(255, 255, 255, 0.5);
+$background-color: rgba(229, 229, 229, 0.3);
+
+.searchBar {
+  width: 100%;
+  min-width: fit-content;
+
+  .searchInput {
+    background: $background-color;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    &:focus,
+    &:active {
+      border-color: $primary-color;
+    }
+    :global {
+      .ant-input-affix-wrapper {
+        border: none;
+      }
+      input.ant-input {
+        background: transparent;
+        &:focus {
+          color: white;
+        }
+      }
+
+      ::placeholder {
+        color: $placeholder-color;
+      }
+      /* Edge */
+      ::-webkit-input-placeholder {
+        color: $placeholder-color;
+      }
+      /* Internet Explorer */
+      :-ms-input-placeholder {
+        color: $placeholder-color;
+      }
+    }
+
+    .ant-input-suffix,
+    .searchIcon {
+      color: $placeholder-color;
+    }
+  }
+}

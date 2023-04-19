@@ -1,0 +1,12 @@
+@import 'styles/variables';
+
+.iconList {
+  @apply flex gap-x-1;
+  color: $primary-color;
+
+  .tokenIcon {
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

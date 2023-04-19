@@ -1,0 +1,316 @@
+@import 'styles/variables.scss';
+
+$gradient: linear-gradient(180deg, #ff2a6d, #a07eff, #3dffff);
+
+@mixin gradientText {
+  background: -webkit-linear-gradient(180deg, #ff2a6d, #a07eff, #3dffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin cyanBorder {
+  border: 1px solid $primary-color;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+@mixin buttonStates($mainColor) {
+  $hover-color: scale-color($mainColor, $lightness: +30%);
+  $click-color: scale-color($mainColor, $lightness: +20%);
+
+  outline: none;
+  cursor: pointer;
+
+  // state color
+  &:hover:not(:disabled) {
+    background-color: $hover-color;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $click-color;
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    border-color: #666666;
+    color: #666666;
+  }
+}
+
+@mixin tabStates($mainColor) {
+  $hover-color: scale-color($mainColor, $lightness: +30%);
+  $click-color: scale-color($mainColor, $lightness: +20%);
+
+  outline: none;
+  cursor: pointer;
+
+  // state color
+  &:hover {
+    color: $hover-color;
+    border-bottom: $hover-color solid 4px;
+  }
+
+  &:active {
+    color: $click-color;
+    border-bottom: $click-color solid 4px;
+  }
+}
+
+@mixin svgStates($mainColor) {
+  $hover-color: invert($mainColor, 20%);
+  $click-color: invert($mainColor, 40%);
+
+  outline: none;
+  cursor: pointer;
+
+  // state color
+  &:hover {
+    stroke: $hover-color;
+    fill: $hover-color;
+    color: $hover-color;
+  }
+
+  &:active {
+    stroke: $click-color;
+    fill: $click-color;
+    color: $click-color;
+  }
+}
+
+@mixin fontSetting {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+}
+
+@mixin gradientBg {
+  background: $gradient-color;
+}
+
+@mixin gradientBorder($stokeWidth: 5px) {
+  border: $stokeWidth solid;
+  border-image-slice: 1;
+  border-image-source: $gradient-color;
+}
+
+@mixin gradientBorderWithRadius($stokeWidth: 5px) {
+  background-clip: padding-box;
+  border: $stokeWidth solid transparent;
+  border-radius: $stokeWidth;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$stokeWidth;
+    border-radius: inherit;
+    background: $gradient-color;
+  }
+}
+
+@mixin showScrollbar {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    width: 8px;
+    border-radius: 4px;
+    background-color: #3f465f;
+  }
+}
+
+@mixin cardBorder($color: rgba(0, 215, 215, 0.8)) {
+  border: 1px solid $color;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+@mixin emptySectionStyle {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  padding: 48px 64px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: linear-gradient(
+    278.16deg,
+    rgba(255, 42, 109, 0.1) 0.94%,
+    rgba(160, 126, 255, 0.1) 51.22%,
+    rgba(61, 255, 255, 0.1) 98.25%
+  );
+  svg {
+    margin: 0 auto;
+  }
+  .text {
+    margin-top: 24px;
+    color: white;
+    font-size: 18px;
+
+    > a {
+      font-weight: 600;
+      color: $primary-color;
+      border-bottom: 2px solid $primary-color;
+      padding-bottom: 2px;
+    }
+  }
+}
+
+@mixin fadeInBottom($duration: 0.5s) {
+  animation: fadein $duration;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin fadeInRight($duration: 0.5s) {
+  animation: fadein $duration;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+@mixin priceInput {
+  font-size: 42px;
+  line-height: 48px;
+  max-width: 100%;
+  width: max-content;
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+@mixin priceInputSlider {
+  width: 60%;
+  margin: 16px auto !important;
+  @apply opacity-0 transition-opacity;
+
+  :global {
+    .ant-slider-rail {
+      background: linear-gradient(
+        284.63deg,
+        rgba(255, 42, 109, 0.6) 6.45%,
+        rgba(160, 126, 255, 0.6) 48.42%,
+        rgba(61, 255, 255, 0.6) 94.9%
+      );
+    }
+    .ant-slider-track {
+      background-color: transparent;
+    }
+    .ant-slider-dot {
+      display: none;
+    }
+    .ant-slider-mark-text {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &::before {
+        content: '';
+        width: 1px;
+        height: 6px;
+        background-color: #fff;
+      }
+    }
+    .ant-slider-handle {
+      border: none;
+      background: linear-gradient(0deg, rgba(255, 42, 109, 0.1), rgba(255, 42, 109, 0.1)),
+        linear-gradient(135deg, rgba(61, 255, 255, 0.9) 0%, rgba(255, 42, 109, 0.9) 100%), #221334;
+    }
+  }
+}
+
+@mixin antd-pagination-override {
+  :global {
+    .ant-pagination-item,
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      background-color: transparent;
+      border-color: $primary-color;
+      a {
+        color: white;
+      }
+      button {
+        background-color: transparent;
+        border-color: $primary-color;
+        color: white;
+      }
+
+      &:hover {
+        border-color: $primary-color;
+        a,
+        button {
+          color: $primary-color;
+          border-color: $primary-color;
+        }
+      }
+    }
+    .ant-pagination-item-active {
+      border-color: $primary-color;
+      background-color: $primary-color;
+      a {
+        color: white;
+      }
+    }
+    .ant-pagination-item-link {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@mixin antd-nav-override {
+  :global {
+    .ant-tabs-nav {
+      .ant-tabs-nav-wrap,
+      .ant-tabs-nav-list {
+        width: 100%;
+      }
+
+      &::before {
+        border: none;
+      }
+      .ant-tabs-tab {
+        @apply font-semibold text-2xl m-0;
+        color: rgba(61, 255, 255, 0.2);
+        flex: 1 1 50%;
+        justify-content: center;
+        &:hover,
+        &:focus {
+          @apply text-primary;
+        }
+      }
+      .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+        @apply text-primary;
+      }
+
+      .ant-tabs-ink-bar {
+        height: 6px;
+        background: $primary-color;
+      }
+
+      .ant-tabs-nav-operations {
+        display: none;
+      }
+    }
+  }
+}

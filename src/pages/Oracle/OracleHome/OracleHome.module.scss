@@ -1,0 +1,451 @@
+@use 'sass:math';
+@import 'styles/variables';
+@import 'styles/mixins';
+
+$gap-size: 16px;
+
+@mixin flexAlignCenter {
+  @apply flex justify-between items-center;
+}
+
+@mixin card {
+  border-radius: 10px;
+  padding: 12px 16px;
+
+  svg {
+    color: $primary-color;
+  }
+}
+
+@mixin cardSelect {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+    .title,
+    .text,
+    svg {
+      color: $primary-color-dark1;
+    }
+  }
+
+  &.selected {
+    background-color: $primary-color;
+    .title,
+    .text,
+    svg {
+      color: $theme-color;
+    }
+  }
+}
+
+@mixin listItem {
+  @include flexAlignCenter;
+  padding: 12px;
+  border-top: 1px solid rgba(61, 255, 255, 0.1);
+
+  .token {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .name {
+      margin-left: 0.5rem;
+      color: $primary-color;
+      text-transform: uppercase;
+    }
+  }
+  .icon {
+    cursor: pointer;
+  }
+}
+
+@mixin listItemSelect {
+  cursor: pointer;
+  &:hover,
+  &.selected {
+    background-color: rgba(61, 255, 255, 0.8);
+    overflow: hidden;
+    .name,
+    .icon {
+      color: $secondary-color;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  color: $primary-color;
+
+  .tabs {
+    margin-bottom: $gap-size;
+
+    :global {
+      .ant-tabs-nav {
+        &::before {
+          border: none;
+        }
+        .ant-tabs-tab {
+          @apply font-semibold text-lg;
+          color: $gray-color-100;
+
+          &:hover,
+          &:focus {
+            @apply text-primary;
+          }
+        }
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+          @apply text-primary;
+        }
+
+        .ant-tabs-ink-bar {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+}
+.clientCard,
+.subscribeCard {
+  font-size: 24px;
+  font-weight: bold;
+  padding-top: 0.4rem;
+  margin-bottom: $gap-size;
+  text-align: left;
+
+  .title {
+    text-transform: capitalize;
+    text-align: left;
+    font-size: 24px;
+    color: $primary-color;
+    margin-bottom: $gap-size;
+  }
+  .clientList {
+    @include flexAlignCenter();
+    justify-content: flex-start;
+
+    .clientItem {
+      display: flex;
+      align-items: center;
+      border: 2px solid $primary-color;
+      @include card;
+      @include cardSelect;
+
+      padding: 2px 24px 2px 12px;
+      border-radius: 20px;
+      font-size: 18px;
+
+      margin-right: 1.4rem;
+
+      .text {
+        margin-left: 0.6rem;
+        text-transform: uppercase;
+        color: $primary-color;
+      }
+
+      &.selected {
+        .text {
+          color: $theme-color;
+        }
+      }
+    }
+  }
+
+  .substrateCard {
+    @include card();
+    background: rgba(0, 0, 0, 0.25);
+    width: 400px;
+    height: fit-content;
+    margin-top: 30px;
+
+    > div {
+      margin-bottom: $gap-size;
+    }
+  }
+
+  .tabs {
+    :global {
+      .ant-tabs-nav {
+        color: $primary-color;
+        &::before {
+          border: none;
+        }
+        .ant-tabs-tab {
+          font-size: 18px;
+          color: $theme-color;
+        }
+        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+          color: $primary-color;
+        }
+        .ant-tabs-ink-bar {
+          background: $primary-color;
+        }
+      }
+    }
+
+    .subTitle {
+      font-weight: bold;
+      font-size: 16px;
+      text-transform: capitalize;
+      color: $primary-color-dark1;
+      margin-bottom: math.div($gap-size, 2);
+    }
+
+    .coinList {
+      @include card();
+      background: rgba(0, 0, 0, 0.25);
+      border: none;
+      padding: 12px 16px;
+      height: calc(5 * 59px + 12px);
+      .searchBar {
+        padding: 12px 0;
+        padding-top: 0;
+      }
+      .list {
+        max-height: calc(4 * 59px);
+        background-color: #1c6174;
+        border-radius: inherit;
+        overflow: auto;
+        overflow-y: scroll;
+      }
+    }
+    .coinItem {
+      @include listItem;
+      @include buttonStates(black);
+    }
+
+    .coinWatchList {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      border-radius: 10px;
+      padding: 12px 16px;
+      height: calc(5 * 59px + 12px);
+      overflow: hidden;
+
+      .list {
+        border-radius: 10px;
+        max-height: calc(5 * 59px - 12px);
+        overflow-y: scroll;
+        overflow: auto;
+        background-color: #1c6174;
+      }
+      .coinItem {
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+        overflow: hidden;
+
+        &:first-child {
+          border-top: none;
+        }
+
+        .token {
+          .name {
+            text-transform: uppercase;
+            color: $theme-color;
+          }
+        }
+        .icon {
+          color: rgba(0, 0, 0, 0.25);
+        }
+
+        &:hover,
+        :active,
+        &.selected {
+          background: $primary-color;
+        }
+      }
+    }
+
+    .subscriptionCard {
+      box-sizing: border-box;
+      min-height: 230px;
+      overflow-x: hidden;
+
+      position: relative;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      padding: 12px 24px;
+      color: $primary-color;
+
+      .tokenName {
+        font-size: 32px;
+        text-align: left;
+        text-transform: uppercase;
+      }
+
+      .coinBackground {
+        position: absolute;
+        height: 100%;
+        width: fit-content;
+        top: 50%;
+        left: -90px;
+        transform: translate(0, -50%);
+        opacity: 0.1;
+      }
+
+      .formRow {
+        width: 100%;
+        padding: 12px 0;
+        @include flexAlignCenter;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+        .label {
+          font-size: 16px;
+          min-width: 50%;
+          width: 50%;
+        }
+        .inputBox {
+          min-width: 50%;
+          width: 50%;
+          &:not(:last-child) {
+            margin-top: 10px;
+          }
+          :global {
+            .ant-form-item-control-input-content
+              > .ant-form-item-has-error
+              .ant-input-affix-wrapper {
+              background: transparent;
+              background: rgba(0, 215, 215, 0.2);
+            }
+            .ant-form-item-has-error,
+            .ant-form-item-has-error .ant-input-affix-wrapper,
+            .ant-form-item-has-error .ant-input:hover,
+            .ant-form-item-has-error .ant-input-affix-wrapper:hover,
+            .ant-input-affix-wrapper {
+              width: 100%;
+              box-sizing: border-box;
+              border-radius: 5px;
+              border: 1px solid $secondary-color;
+              background: rgba(0, 215, 215, 0.2);
+            }
+            input.ant-input {
+              background: transparent;
+            }
+          }
+        }
+
+        .leasePeriodSelect {
+          width: 100%;
+        }
+        :global {
+          .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+            background-color: transparent;
+            border: $primary-color 1px solid;
+            border-radius: 4px;
+
+            .ant-select-selection-item {
+              color: $primary-color;
+            }
+          }
+          .ant-select-arrow {
+            color: $primary-color;
+          }
+          .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+            color: white;
+            font-weight: 600;
+            background-color: $secondary-color;
+          }
+        }
+        .dsList {
+          display: flex;
+          > div {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    .inputBox {
+      min-width: 60%;
+      :global {
+        .ant-input-affix-wrapper {
+          width: 100%;
+          box-sizing: border-box;
+          border-radius: 5px;
+          border: 1px solid $secondary-color;
+          background: rgba(0, 215, 215, 0.2);
+        }
+        input.ant-input {
+          background: transparent;
+        }
+      }
+    }
+
+    .datasourceCard {
+      @include card();
+      background: rgba(0, 0, 0, 0.25);
+
+      > div {
+        margin-bottom: $gap-size;
+      }
+    }
+
+    .datasourceSelected {
+      @include card();
+      background: rgba(0, 0, 0, 0.25);
+
+      .dataSourcesList {
+        background-color: #1c6174;
+        margin-top: 16px;
+        border-radius: 10px;
+        max-height: calc(3 * 55px);
+        overflow-y: scroll;
+        .dsName {
+          margin-left: 0.5rem;
+          color: $primary-color;
+          text-transform: capitalize;
+        }
+        .icon {
+          color: rgba(0, 215, 215, 0.8);
+        }
+      }
+    }
+    .actions {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      margin-top: $gap-size;
+
+      .button {
+        flex-grow: 1;
+        padding: 8px 24px;
+        opacity: 0.8;
+        border: 1px solid #00d7d7;
+        &:nth-child(2) {
+          margin-left: 16px;
+        }
+      }
+    }
+    .emptyMsg {
+      height: 100%;
+      min-height: 240px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      color: $primary-color-dark1;
+    }
+  }
+}
+
+.subscribeCard {
+  height: 443px;
+}
+
+.subscribeButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.newProposal {
+  margin-top: 40px;
+  font-size: 20px;
+  color: #00d7d7;
+
+  .link {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,19 @@
+@import 'styles/variables.scss';
+
+$color-disabled: rgba(229, 229, 229, 0.75);
+
+.lining {
+  min-width: 288px;
+  border: 1px solid $primary-color;
+  padding: 6px 16px;
+
+  &:hover:not(:disabled) {
+    background-color: #4d4d4d;
+  }
+
+  &.disabled {
+    @apply pointer-events-none;
+    border-color: $color-disabled;
+    color: $color-disabled;
+  }
+}

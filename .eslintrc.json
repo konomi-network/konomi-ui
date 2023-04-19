@@ -1,0 +1,6 @@
+{
+  "extends": ["@konomi-network/eslint-config-konomi"],
+  "rules": {
+    "import/no-extraneous-dependencies": 0
+  }
+}

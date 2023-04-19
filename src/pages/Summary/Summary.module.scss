@@ -1,0 +1,53 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+$gap-size: 16px;
+
+.container {
+  width: 100%;
+  color: $primary-color;
+
+  .tabs {
+    margin-bottom: $gap-size;
+    :global {
+      .ant-tabs-nav {
+        &::before {
+          border: none;
+        }
+        .ant-tabs-tab {
+          @apply font-semibold text-lg;
+          color: $gray-color-100;
+
+          &:hover,
+          &:focus {
+            @apply text-primary;
+          }
+        }
+
+        .ant-tabs-tab-btn {
+          @apply flex items-center;
+
+          svg {
+            @apply mr-4;
+          }
+        }
+
+        .ant-tabs-tab-active .ant-tabs-tab-btn {
+          @apply text-primary;
+        }
+
+        .ant-tabs-ink-bar {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    position: relative;
+    .innerContent {
+      width: 100%;
+    }
+  }
+}

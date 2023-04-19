@@ -1,0 +1,75 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.header {
+  &:global {
+    &.ant-layout-header {
+      @apply relative my-0 mx-auto p-0 top-0 left-0 z-10 w-full flex items-center justify-between;
+      background-color: $theme-color;
+    }
+  }
+
+  .logo {
+    @apply flex;
+    height: max-content;
+    width: 50px;
+    height: 50px;
+    svg {
+      @apply w-full h-full;
+    }
+  }
+
+  .menu {
+    &:global {
+      // remove border bottom
+      &.ant-menu-horizontal {
+        border: none;
+        font-size: 18px;
+        background: transparent;
+        flex-grow: 1;
+        justify-content: flex-end;
+      }
+
+      // remove blue background
+      &.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
+        background: transparent;
+        &:hover {
+          @include gradientText;
+        }
+      }
+
+      // bold selected item
+      &.ant-menu.ant-menu-dark .ant-menu-item-selected,
+      &.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected,
+      &.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background: transparent;
+        font-weight: bold;
+        @include gradientText;
+      }
+      // link color
+      &.ant-menu-dark .ant-menu-item,
+      &.ant-menu-dark .ant-menu-item-group-title,
+      &.ant-menu-dark .ant-menu-item > a,
+      &.ant-menu-dark .ant-menu-item > span > a {
+        color: white;
+      }
+    }
+    .disabledItem {
+      pointer-events: none;
+
+      span {
+        color: $gray-color-100 !important;
+      }
+
+      &::before {
+        content: 'Coming soon';
+        position: absolute;
+        font-size: 10px;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #ff2a6d;
+      }
+    }
+  }
+}

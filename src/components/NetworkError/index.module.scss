@@ -1,0 +1,20 @@
+@import 'styles/mixins.scss';
+.modal {
+  :global {
+    .ant-modal-content {
+      border-radius: 8px;
+      background: $theme-color;
+    }
+    .ant-modal-close-icon {
+      @apply text-white;
+    }
+    .ant-modal-body {
+      @apply text-center p-0;
+    }
+  }
+
+  .empty {
+    @include emptySectionStyle;
+    @apply m-0 w-full;
+  }
+}

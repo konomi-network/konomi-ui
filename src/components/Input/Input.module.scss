@@ -1,0 +1,52 @@
+@import 'styles/variables';
+
+$placeholder-color: rgba(255, 255, 255, 0.5);
+$background-color: rgba(0, 215, 215, 0.2);
+
+.inputBox {
+  min-width: fit-content;
+  width: 100%;
+  &:not(:last-child) {
+    margin-top: 10px;
+  }
+
+  .input {
+    background: transparent;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    &:focus,
+    &:active {
+      border-color: $primary-color;
+    }
+    :global {
+      .ant-input-affix-wrapper {
+        border: none;
+        border-radius: 5px;
+        border: 1px solid $secondary-color;
+        background: $background-color;
+      }
+      input.ant-input {
+        background: transparent;
+        color: white;
+        &:focus {
+          color: white;
+        }
+      }
+
+      ::placeholder {
+        color: $background-color;
+      }
+      /* Edge */
+      ::-webkit-input-placeholder {
+        color: $background-color;
+      }
+      /* Internet Explorer */
+      :-ms-input-placeholder {
+        color: $background-color;
+      }
+    }
+  }
+}

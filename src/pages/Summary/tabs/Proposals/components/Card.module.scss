@@ -1,0 +1,34 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.card {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 10px 10px 10px 54px;
+  background: linear-gradient(
+    278.16deg,
+    rgba(255, 42, 109, 0.1) 0.94%,
+    rgba(160, 126, 255, 0.1) 51.22%,
+    rgba(61, 255, 255, 0.1) 98.25%
+  );
+  padding: 12px 12px 8px 1rem;
+  color: #fff;
+
+  &.active,
+  &:hover {
+    border-radius: 54px 10px 10px 10px;
+    outline: 2px solid $primary-color;
+  }
+}
+
+.skeleton {
+  :global {
+    .ant-skeleton-title {
+      margin-top: 0;
+    }
+  }
+}

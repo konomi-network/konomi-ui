@@ -1,0 +1,46 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.modal {
+  :global {
+    display: flex;
+    align-items: center;
+    .ant-modal-header {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      color: rgba(178, 178, 178, 0.85);
+      border: none;
+      background: transparent;
+      border-radius: 2px 2px 0 0;
+    }
+    .ant-modal-content {
+      @apply w-full;
+      border-radius: 4px;
+      background-color: $theme-color;
+      color: white;
+      box-shadow: 0 0 10px rgba(152, 152, 152, 0.3);
+      border-radius: 25px;
+      padding-top: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .ant-modal-title {
+      color: rgb(212, 212, 212);
+      font-size: 15px;
+    }
+
+    .ant-modal-close {
+      top: 1.5rem;
+      right: 2rem;
+    }
+
+    .ant-modal-close-icon {
+      color: rgb(141, 141, 141);
+    }
+    .ant-modal-body {
+      @apply text-center;
+    }
+  }
+}

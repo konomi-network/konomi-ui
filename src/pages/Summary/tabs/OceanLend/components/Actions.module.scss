@@ -1,0 +1,10 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  .button {
+    @apply transition-all hover:bg-primary hover:text-white;
+    white-space: nowrap;
+    width: fit-content;
+  }
+}

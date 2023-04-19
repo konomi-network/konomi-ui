@@ -1,0 +1,29 @@
+@import 'styles/variables';
+
+.container {
+  &.vertical {
+    flex-direction: column;
+  }
+
+  .iconWrapper {
+    background: white;
+
+    &.gradient {
+      background: $gradient-color;
+    }
+
+    .icon {
+      border: 1px solid #000;
+
+      > svg,
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}

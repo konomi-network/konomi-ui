@@ -1,0 +1,21 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.container {
+  border: 1px solid $primary-color;
+  background: linear-gradient(0deg, #29263f, #29263f);
+
+  .oceanConfig {
+    :global {
+      .ant-collapse-content-box {
+        @apply flex gap-x-12;
+      }
+    }
+  }
+  .currency {
+    &:hover,
+    &.active {
+      background-color: #194a61;
+    }
+  }
+}

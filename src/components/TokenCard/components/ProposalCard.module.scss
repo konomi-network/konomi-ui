@@ -1,0 +1,63 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.container {
+  @include cardBorder(#29263f);
+  background: #29263f;
+  padding: 12px 1rem 1rem;
+
+  .tokenIcon {
+    margin-right: 0.5rem;
+  }
+
+  .tokenName {
+    font-weight: 600;
+    font-size: $font-size-md;
+    line-height: 32px;
+    color: $primary-color;
+    opacity: 0.8;
+    text-transform: uppercase;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bottom {
+    margin-top: 8px;
+    align-items: flex-end;
+    .right {
+      margin-top: -38px;
+    }
+  }
+
+  .label {
+    font-weight: 500;
+    font-size: $font-size-sm;
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+    opacity: 0.7;
+  }
+
+  .value {
+    display: flex;
+    align-items: center;
+  }
+
+  .proposalText {
+    @include gradientText;
+    position: absolute;
+    transform-origin: top right;
+    transform: translateX(-100%) rotate(-90deg);
+    bottom: 66px;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+
+  &:hover,
+  &.selected {
+    border-color: #3dffff;
+    background-color: #362846;
+  }
+}

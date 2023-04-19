@@ -1,0 +1,95 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+@mixin columnPadding {
+  padding: 0px 20px;
+}
+
+.container {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  position: relative;
+
+  &:not(:last-child) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 3rem);
+      height: 1px;
+      background-color: $primary-color-dark1;
+    }
+  }
+
+  .nameContainer {
+    @apply flex items-center;
+
+    .symbol {
+      font-weight: 600;
+      font-size: 24px;
+      color: white;
+      margin-left: 14px;
+      text-transform: uppercase;
+    }
+  }
+
+  .settingsContainer {
+    @apply flex flex-col justify-between gap-2;
+    padding-left: 1.5rem;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 4px;
+      .name {
+        color: white;
+        flex: 0 0 150px;
+        text-align: left;
+      }
+      .value {
+        font-weight: bold;
+        color: $primary-color;
+        flex: 1 0 auto;
+        text-align: right;
+
+        :global {
+          .ant-select-selector {
+            background-color: #194a61;
+            border: none;
+            .ant-select-selection-item {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+      .missingOption {
+        color: red;
+      }
+      .defaultOption {
+        color: #0b98a3;
+      }
+    }
+  }
+
+  .clientDetailsContainer {
+    min-height: 132px;
+    @include columnPadding();
+  }
+
+  .removeContainer {
+    @include columnPadding();
+    @apply flex justify-center items-center absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

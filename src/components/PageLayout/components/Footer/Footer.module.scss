@@ -1,0 +1,76 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.footer {
+  &:global {
+    &.ant-layout-footer {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+      display: flex;
+      align-items: flex-start;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100vw;
+    height: 1px;
+    margin-right: -50vw;
+    right: 50%;
+    background-color: $primary-color;
+  }
+
+  :global {
+    .ant-col {
+      position: relative;
+      text-align: left;
+      padding: 24px 0;
+
+      &:not(:first-child) {
+        padding-left: 60px;
+      }
+
+      &:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 24px;
+        background-color: $primary-color;
+        top: 0;
+        right: 0;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        padding: 1rem 0 !important;
+        text-align: center;
+      }
+
+      span {
+        @apply block font-semibold text-base text-primary;
+      }
+    }
+  }
+
+  .links {
+    @apply mt-4 flex;
+
+    svg {
+      @apply mr-2 w-5 h-5;
+    }
+
+    a {
+      @apply mr-12 flex items-center text-xs font-semibold text-primary;
+    }
+  }
+}

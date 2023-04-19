@@ -1,0 +1,20 @@
+<svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.728447" y="0.728447" width="39.5431" height="38.5431" rx="19.2716" fill="#3650FA" stroke="#3650FA" stroke-width="1.45689"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="27" y="15" width="11" height="10">
+<path d="M32.76 24.7386C35.4425 24.7386 37.617 22.6171 37.617 20.0001C37.617 17.3831 35.4425 15.2616 32.76 15.2616C30.0776 15.2616 27.9031 17.3831 27.9031 20.0001C27.9031 22.6171 30.0776 24.7386 32.76 24.7386Z" fill="white" stroke="#FFE500" stroke-width="0.076074" stroke-miterlimit="10"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M34.287 28.6989L14.7021 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M35.9466 28.6989L16.3618 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M37.6061 28.6989L18.0212 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M39.266 28.6989L19.6812 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M40.9264 28.6989L21.3416 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M42.5868 28.6989L23.002 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M44.2474 28.6989L24.6626 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M45.9064 28.6989L26.3215 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M47.5668 28.6989L27.9819 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M49.2269 28.6989L29.6421 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+<path d="M50.8863 28.6989L31.3015 9.59106" stroke="white" stroke-width="0.532518" stroke-miterlimit="10"/>
+</g>
+<path d="M20.4995 12.498C23.182 12.498 25.3565 10.3765 25.3565 7.7595C25.3565 5.1425 23.182 3.021 20.4995 3.021C17.8171 3.021 15.6426 5.1425 15.6426 7.7595C15.6426 10.3765 17.8171 12.498 20.4995 12.498Z" fill="white" stroke="white" stroke-width="0.076074" stroke-miterlimit="10"/>
+</svg>

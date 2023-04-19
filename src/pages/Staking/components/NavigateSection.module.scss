@@ -1,0 +1,12 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.container {
+  width: 100%;
+  color: $primary-color;
+
+  .tabs {
+    @apply mb-2;
+    @include antd-nav-override;
+  }
+}

@@ -1,0 +1,28 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.tabs {
+  :global {
+    .ant-tabs-nav {
+      &::before {
+        border: none !important;
+      }
+      .ant-tabs-tab {
+        @apply font-semibold text-lg;
+        color: $gray-color-100;
+
+        &:hover,
+        &:focus {
+          @apply text-primary;
+        }
+      }
+      .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+        @apply text-primary;
+      }
+
+      .ant-tabs-ink-bar {
+        background: $primary-color;
+      }
+    }
+  }
+}

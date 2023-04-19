@@ -1,0 +1,74 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.container {
+  border: 1px solid $primary-color;
+  background: linear-gradient(0deg, #29263f, #29263f);
+
+  .oceanConfig {
+    :global {
+      .ant-collapse-content-box {
+        @apply flex gap-x-12;
+      }
+    }
+  }
+
+  .gridCollapse {
+    :global {
+      .ant-collapse-content-box {
+        @apply grid grid-cols-2 gap-x-2;
+
+        div:nth-child(1),
+        div:nth-child(2) {
+          @apply col-span-2;
+        }
+      }
+    }
+  }
+
+  .table {
+    :global {
+      .ant-table {
+        background-color: transparent;
+        border-radius: 0;
+      }
+      .ant-table-thead .ant-table-cell {
+        background-color: transparent;
+        border-radius: 0;
+        color: rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        text-align: center;
+      }
+
+      .ant-table-tbody .ant-table-cell {
+        color: white;
+        border-bottom: none;
+        background-color: transparent !important;
+      }
+
+      .ant-table-tbody .ant-table-cell:first-child {
+        padding-left: 0;
+      }
+
+      .ant-table-tbody .ant-table-cell:not(:first-child) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.detailModal {
+  :global {
+    .ant-modal-content {
+      @apply text-primary rounded-lg;
+      border: 1px solid $primary-color;
+      background-color: #29263f;
+    }
+    .ant-modal-close-icon {
+      @apply text-white;
+    }
+    .ant-modal-body {
+      @apply text-center;
+    }
+  }
+}

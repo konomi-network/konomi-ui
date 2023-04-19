@@ -1,0 +1,172 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+$card-active-background: linear-gradient(98.47deg, #300d18 -1.86%, #211839 52.49%, #0a2020 103.33%);
+
+.container {
+  position: relative;
+  width: 100%;
+  background: #29263f;
+  @include cardBorder(#29263f);
+
+  padding: 1rem;
+  padding-top: 12px;
+  color: #ffffff;
+  cursor: pointer;
+
+  .row {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .token {
+    display: flex;
+    align-items: center;
+    .tokenIcon {
+      margin-right: 6px;
+    }
+    .tokenName {
+      font-weight: bold;
+      font-size: $font-size-md;
+      text-align: center;
+      color: $primary-color;
+      opacity: 0.8;
+      text-transform: uppercase;
+      margin-right: 12px;
+    }
+  }
+  .price {
+    font-weight: 500;
+    font-size: $font-size-md;
+    text-align: right;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .bottom {
+    margin-top: 8px;
+    align-items: flex-end;
+    .right {
+      margin-top: -38px;
+    }
+  }
+
+  .label {
+    font-weight: 500;
+    font-size: $font-size-sm;
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+    opacity: 0.7;
+  }
+
+  .value {
+    display: flex;
+    align-items: center;
+  }
+
+  .proposalText {
+    @include gradientText;
+    position: absolute;
+    transform-origin: top right;
+    transform: translateX(-100%) rotate(-90deg);
+    bottom: 66px;
+    font-size: 18px;
+    text-transform: capitalize;
+  }
+
+  &:hover,
+  &.selected {
+    border-color: #3dffff;
+    background-color: #362846;
+  }
+}
+
+.expandRow {
+  background: $card-active-background;
+  @include cardBorder;
+
+  .coinBackground {
+    position: absolute;
+    height: 100%;
+    width: fit-content;
+    top: 50%;
+    left: -100px;
+    transform: translate(0, -50%);
+    opacity: 0.1;
+  }
+
+  .tokenName {
+    font-weight: bold;
+    font-size: $font-size-md;
+    text-transform: uppercase;
+    margin-bottom: $gap-size-medium;
+  }
+
+  .aggStrategy {
+    height: fit-content;
+    margin-bottom: 16px;
+  }
+
+  .label {
+    color: #ffffff;
+    font-size: $font-size-sm;
+    margin-bottom: 6px;
+  }
+
+  .value {
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  .dataSources {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 24px;
+    border-left: 1px solid rgba(61, 255, 255, 0.6);
+
+    .title {
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .addButton {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 14px;
+      padding: 8px 16px;
+      text-transform: capitalize;
+    }
+
+    .icon {
+      display: flex;
+      // margin-right: 40px;
+    }
+  }
+
+  .divider {
+    border: 2px solid rgba(0, 215, 215, 0.6);
+    height: 100%;
+  }
+
+  .collapseIcon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}

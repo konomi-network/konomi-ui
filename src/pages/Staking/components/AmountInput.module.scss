@@ -1,0 +1,21 @@
+@import 'styles/mixins';
+
+.wrapper {
+  .inputSection {
+    height: 60px;
+
+    &:hover {
+      .slider {
+        @apply opacity-100;
+      }
+    }
+
+    .input {
+      @include priceInput;
+    }
+
+    .slider {
+      @include priceInputSlider;
+    }
+  }
+}

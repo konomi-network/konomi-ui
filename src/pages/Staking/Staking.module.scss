@@ -1,0 +1,24 @@
+@import 'styles/variables.scss';
+
+.wrapper {
+  width: 415px;
+
+  .main {
+    min-height: 580px;
+    &::before {
+      content: '';
+      @apply absolute top-0 left-0 opacity-50 w-full h-full rounded-2xl;
+      border: 1px solid $primary-color;
+      background: #252239;
+    }
+
+    button {
+      @apply text-primary font-bold h-10 mt-2 transition-all hover:bg-primary hover:text-white;
+      border-radius: 5% / 50%;
+
+      &.disabled {
+        @apply border-none text-white opacity-50 bg-gray-400 pointer-events-none;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+@import '../OracleHome/OracleHome.module.scss';
+
+.container {
+  width: 100%;
+
+  .title {
+    font-weight: 600;
+    font-size: 20px;
+    @include gradientText;
+  }
+
+  .table {
+    @include gradientBorder(1px);
+    background: rgba(0, 215, 215, 0.1);
+  }
+
+  .buttonGroupRow {
+    .buttonGroup {
+      .estimated {
+        width: 400px;
+        height: 70px;
+        @include cyanBorder();
+      }
+
+      .confirmGroup {
+        .button {
+          padding: 6px 0;
+          width: 180px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-transform: capitalize;
+        }
+        .back {
+          color: white;
+          border: 1px solid white;
+        }
+      }
+    }
+  }
+}

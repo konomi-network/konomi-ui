@@ -1,0 +1,59 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.buttonGroup {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: stretch;
+
+  button {
+    border: 2px solid $primary-color;
+    background-color: transparent;
+    height: 100%;
+    padding: 10px 24px;
+    font-size: inherit;
+    flex-grow: 1;
+
+    color: $primary-color;
+    text-align: center;
+    white-space: nowrap;
+    @include buttonStates($theme-color);
+
+    &:first-child {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:last-child {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &:not(:first-child) {
+      border-left: none;
+    }
+
+    &:hover,
+    &:active,
+    &.selected {
+      background-color: $primary-color;
+      color: $theme-color;
+      font-weight: bold;
+    }
+  }
+}
+
+.buttonGroup.dark {
+  button {
+    border: 2px solid $primary-color;
+    color: $primary-color;
+
+    &:hover,
+    &:active,
+    &.selected {
+      background-color: $primary-color;
+      color: $secondary-color;
+    }
+  }
+}

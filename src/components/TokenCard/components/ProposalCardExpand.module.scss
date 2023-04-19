@@ -1,0 +1,28 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  @include cardBorder;
+  background-color: hsl(247, 25%, 20%);
+  overflow: hidden;
+
+  .innerCard {
+    min-height: 212px;
+  }
+  .nameInfo {
+    width: 140px;
+  }
+  .label {
+    color: $primary-color;
+    font-size: $font-size-sm;
+  }
+  .clientBody {
+    background: #2a324d;
+    border-radius: 6px;
+    height: 96px;
+  }
+
+  .status {
+    border-bottom-right-radius: 8px;
+  }
+}

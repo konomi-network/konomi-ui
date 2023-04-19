@@ -1,0 +1,47 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  .button {
+    @apply transition-all hover:bg-primary hover:text-white;
+  }
+}
+
+.modal {
+  :global {
+    .ant-modal-content {
+      @apply text-primary rounded-lg;
+      border: 1px solid $primary-color;
+      background-color: $theme-color;
+    }
+    .ant-modal-close-icon {
+      @apply text-white;
+    }
+    .ant-modal-body {
+      @apply text-center;
+    }
+  }
+
+  .inputWrapper {
+    &:hover {
+      .slider {
+        @apply opacity-100;
+      }
+    }
+    .input {
+      @include priceInput;
+    }
+    .slider {
+      @include priceInputSlider;
+    }
+  }
+
+  .tabs {
+    @apply mb-2 -mx-6;
+    @include antd-nav-override;
+  }
+
+  .button {
+    @apply transition-all hover:bg-primary hover:text-white;
+  }
+}

@@ -1,0 +1,26 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.dataSourceList {
+  border: 1px solid $primary-color;
+  background: #2a324d;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-top: 20px;
+  min-width: 308px;
+  height: max-content;
+  max-height: 142px;
+  min-height: 50px;
+  .skeleton {
+    :global {
+      .ant-skeleton-title {
+        margin-top: 0;
+      }
+    }
+  }
+  .sourceItem {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

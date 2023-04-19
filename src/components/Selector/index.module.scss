@@ -1,0 +1,62 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+$bgColor: #194a61;
+
+:global {
+  .ant-select-dropdown.ant-select-dropdown-placement-bottomLeft,
+  .ant-select-item.ant-select-item-option-selected:not(.ant-select-item-option-disabled),
+  .ant-select-item.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    color: white;
+    background-color: $bgColor;
+  }
+  .ant-empty.ant-empty-normal.ant-empty-small {
+    color: white;
+  }
+}
+
+.lining {
+  :global {
+    .ant-select-dropdown {
+      background-color: $primary-color-dark1;
+      .ant-select-item.ant-select-item-option,
+      .ant-select-item-option-active:not(.ant-select-item-option-disabled),
+      .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+        color: white;
+        // background-color: #194a61;
+      }
+      .ant-select-item-option {
+        color: white;
+      }
+    }
+    .ant-select-item.ant-select-item-option,
+    .ant-select-item.ant-select-item-option.ant-select-item-option-selected,
+    .ant-select-item.ant-select-item-option.ant-select-item-option-active {
+      color: white;
+      background-color: $primary-color-dark1;
+      background: $primary-color-dark1;
+    }
+
+    .ant-select-disabled.ant-select:not(.ant-select-customize-input) .ant-select-selector,
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      background-color: $bgColor;
+      border: 1px solid $secondary-color;
+      border-radius: 4px;
+      font-weight: 500;
+      text-align: left;
+
+      .ant-select-selection-item {
+        color: $primary-color;
+      }
+    }
+    .ant-select-arrow {
+      @apply flex items-center;
+    }
+    .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+      background-color: $primary-color-dark1;
+      color: $primary-color;
+      font-weight: 600;
+      background-color: $secondary-color;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.wrapper {
+  max-width: 300px;
+  .value {
+    background: #194a61;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    padding: 0.25rem 1rem;
+    display: block;
+    color: $primary-color;
+    margin-left: 1rem;
+    min-width: 140px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    :global {
+      .ant-skeleton-title {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.card {
+  background: linear-gradient(0deg, #29263f, #29263f);
+  min-width: 306px;
+  min-height: 180px;
+
+  &.active,
+  &:hover {
+    outline: 1px solid $primary-color;
+  }
+}
+
+.cardExpand {
+  border-radius: 4px;
+  border: 1px solid $primary-color;
+  padding: 2rem;
+}

@@ -1,0 +1,96 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.container {
+  border: 1px solid $primary-color;
+
+  .rowPrice {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: $gap-size-medium;
+    font-size: $font-size-lg;
+    font-weight: 500;
+
+    .tokenIcon {
+      margin-right: 12px;
+    }
+
+    .tokenName {
+      color: white;
+      text-transform: uppercase;
+      margin-right: 4rem;
+    }
+
+    .price {
+      color: $primary-color;
+    }
+  }
+
+  .rowStatus {
+    margin-bottom: 2rem;
+    .tokenStatus {
+      font-size: $font-size-semi-md;
+    }
+  }
+
+  .rowStrategy {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .rowTransaction {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    border: 2px solid rgba(0, 215, 215, 0.1);
+    border-radius: 8px;
+  }
+
+  .label {
+    display: block;
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  .value {
+    display: flex;
+    align-items: center;
+    color: $primary-color;
+    font-size: 18px;
+    font-weight: 600;
+
+    a {
+      margin-left: 1rem;
+      display: flex;
+    }
+  }
+
+  .dataSourceLabel {
+    font-weight: 600;
+    font-size: $font-size-semi-md;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  .dataSourceList {
+    width: 100%;
+
+    .source {
+      margin-right: 3rem;
+    }
+  }
+  .collapseBtn {
+    display: flex;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
